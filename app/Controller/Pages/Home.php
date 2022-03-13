@@ -6,21 +6,10 @@ use \App\Utils\View;
 use \App\Model\Entity\Organization;
 
 class Home extends Page{
-
-    public static function getHeader($name){
+    public static function getPiece($name){
         $itens = '';
 
-        $itens .= View::render('pages/home/header', [
-            'name' => $name
-        ]);
-
-        return $itens;
-    }
-
-    public static function getHero(){
-        $itens = '';
-
-        $itens .= View::render('pages/home/hero', [
+        $itens .= View::render('pages/home/'.$name, [
         ]);
 
         return $itens;
@@ -36,9 +25,10 @@ class Home extends Page{
 
         //VIEW DA HOME
         $content = View::render('pages/home',[
-            'name' => $obOrganization->name,
-            'header' => self::getHeader($obOrganization->name),
-            'hero' => self::getHero()
+            'header' => self::getPiece('header'),
+            'hero' => self::getPiece('hero'),
+            'banner' => self::getPiece('banner'),
+            'footer' => self::getPiece('footer')
         ]);
 
         //RETORNA A VIEW DA PÁGINA
