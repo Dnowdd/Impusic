@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icon page -->
+    <link rel="icon" href="{{URL}}/resources/images/logos/logo-initials.png">
+    <link rel="apple-touch-icon" href="{{URL}}/resources/images/logos/logo-initials.png">
+
+    <!-- HTML Meta Tags -->
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{{URL}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:image" content="{{URL}}/resources/images/banners/banner-1.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="riftmaker.com">
+    <meta property="twitter:url" content="{{URL}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:image" content="{{URL}}/resources/images/banners/banner-1.png">
+
+    <meta name="keywords" content="lol, esports, league, riftmaker, campeões, classificação, ranking, season, league of legends stats, statistics, champion build, champion runes">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://riftmaker.com",
+        "logo": "https://riftmaker.com/resources/images/logos/logo-initials.png"
+      }
+    </script>
+
+    <!-- GOOGLE ADSENSE -->
+    {{adJs}}
+
+    <!-- CSS E JS DA PÁGINA -->
+    <link rel="stylesheet" href="{{URL}}/resources/css/pages/{{css}}.css">
+
+    <!-- CSS E JS DO SITE -->
+    <link rel="stylesheet" href="{{URL}}/resources/css/includes/header.css">
+    <link rel="stylesheet" href="{{URL}}/resources/css/includes/footer.css">
+    <link rel="stylesheet" href="{{URL}}/resources/css/includes/lgpd.css">
+  </head>
+
+  <body>
+    <div class="loaderWrapper" id="loader">
+      <div>
+        <img src="{{URL}}/resources/images/logos/LogoAnimated.svg" alt="Loading...">
+      </div>
+    </div>
+    <div class="container" id="contentContainer">
+      <!-- MENU DO SITE -->
+        {{header}}
+
+      <!-- CONTEÚDO DE CADA PÁGINA -->
+        {{content}}
+
+      <!-- BOX DE LGPD -->
+        {{lgpd}}
+
+      <!-- BOX DE ANÚNCIO -->
+        {{ad}}
+        
+      <br><br><br>
+
+      <!-- RODAPÉ DO SITE -->
+        {{footer}}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+    <!-- JQUERY JS -->
+    <script language="JavaScript" type="text/javascript" src="{{URL}}/resources/js/frameworks/Jquery-3.6.0.min.js"></script>
+
+    <script src="{{URL}}/resources/js/includes/header.js"></script>
+    <script src="{{URL}}/resources/js/includes/lgpd.js"></script>
+    <script src="{{URL}}/resources/js/includes/loader.js"></script>
+
+    <script language="JavaScript" type="text/javascript" src="{{URL}}/resources/js/pages/{{css}}.js"></script>
+  </body>
+</html>
