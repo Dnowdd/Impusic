@@ -58,3 +58,15 @@ header img{
 #itens li:hover{
     color: var(--text-hover);
 }
+
+
+/* HERO */
+.hero{
+    width: 100vw;
+    height: 75vh;
+
+    background-image: url('https://via.placeholder.com/1920x1080?text=BANNER'), linear-gradient(146deg, rgba(14,14,14,1) 0%, rgba(119,119,119,0.3249008221452644) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

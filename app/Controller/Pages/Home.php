@@ -17,6 +17,15 @@ class Home extends Page{
         return $itens;
     }
 
+    public static function getHero(){
+        $itens = '';
+
+        $itens .= View::render('pages/home/hero', [
+        ]);
+
+        return $itens;
+    }
+
     /**
      * Método responsável por retornar o conteúdo (view) da nossa Home
      * @return string
@@ -28,7 +37,8 @@ class Home extends Page{
         //VIEW DA HOME
         $content = View::render('pages/home',[
             'name' => $obOrganization->name,
-            'header' => self::getHeader($obOrganization->name)
+            'header' => self::getHeader($obOrganization->name),
+            'hero' => self::getHero()
         ]);
 
         //RETORNA A VIEW DA PÁGINA
