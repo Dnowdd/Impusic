@@ -14,7 +14,7 @@ class Organization{
      * Nome da organização
      * @var string
      */
-    public $name = 'RiftMaker.com';
+    public $name = 'TCC';
 
     /**
      * Site da organização
