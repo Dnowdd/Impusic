@@ -6,6 +6,17 @@ use \App\Utils\View;
 use \App\Model\Entity\Organization;
 
 class Home extends Page{
+
+    public static function getHeader($name){
+        $itens = '';
+
+        $itens .= View::render('pages/home/header', [
+            'name' => $name
+        ]);
+
+        return $itens;
+    }
+
     /**
      * Método responsável por retornar o conteúdo (view) da nossa Home
      * @return string
@@ -16,7 +27,8 @@ class Home extends Page{
 
         //VIEW DA HOME
         $content = View::render('pages/home',[
-            'name' => $obOrganization->name
+            'name' => $obOrganization->name,
+            'header' => self::getHeader($obOrganization->name)
         ]);
 
         //RETORNA A VIEW DA PÁGINA
