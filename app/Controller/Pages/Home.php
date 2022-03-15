@@ -15,6 +15,17 @@ class Home extends Page{
         return $itens;
     }
 
+    public static function getVideoBox(){
+        $itens = '';
+
+        $itens .= View::render('pages/home/videoBox', [
+            'videoCard' => View::render('pages/home/videoCard', [
+            ])
+        ]);
+
+        return $itens;
+    }
+
     /**
      * Método responsável por retornar o conteúdo (view) da nossa Home
      * @return string
@@ -28,6 +39,7 @@ class Home extends Page{
             'header' => self::getPiece('header'),
             'hero' => self::getPiece('hero'),
             'banner' => self::getPiece('banner'),
+            'videoCard' => self::getVideoBox(),
             'footer' => self::getPiece('footer')
         ]);
 
