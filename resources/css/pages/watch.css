@@ -1,0 +1,158 @@
+:root{
+    --plyr-color-main: #710c04;
+    --submit: rgb(2, 88, 187);
+}
+
+#player{
+    width: calc(1920px / 3);
+    height: calc(1080px / 3);
+}
+
+.videoContainer{
+    margin: 100px auto;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+.videoContainer > .videoPlayer{
+    justify-content: center;
+
+    color: var(--text);
+}
+
+.videoContainer > .videoPlayer > .header{
+    width: 90%;
+    margin: 0 auto;
+}
+.videoContainer > .videoPlayer > div > h1{
+    font-size: 20px;
+    padding: 5px 0;
+}
+
+.videoContainer > .videoPlayer > div > span{
+    user-select: none;
+}
+.videoContainer > .videoPlayer > div > span > p{
+    display: inline;
+    font-size: 12px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+.videoContainer > .videoPlayer > div > span > p + p{
+    margin-left: 10px;
+}
+
+.videoContainer > .videoPlayer > div > span > p:hover{
+    color: var(--text-hover);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.videoContainer > div > .comments > .headerComments{
+    width: 80%;
+    height: 15px;
+    margin: 15px auto;
+}
+
+.videoContainer > div > .comments > .headerComments > h1{
+    color: var(--text);
+    font-size: 15px;
+}
+.videoContainer > div > .comments > .headerComments > h1 > p{
+    display: inline;
+}
+
+.videoContainer > div > .comments > div > .commentInput{
+    width: 70%;
+    margin: 15px auto;
+}
+
+.videoContainer > div > .comments > div > .commentInput > img{
+    width: 40px;
+    height: 40px;
+
+    vertical-align: middle;
+
+    border-radius: 100%;
+}
+
+.videoContainer > div > .comments > div > .commentInput > input{
+    border: none;
+    border-bottom: thin solid var(--text-unavaliable);
+    padding: 5px 10px;
+
+    font-weight: 300;
+    color: var(--text);
+
+    background-color: transparent;
+
+    transition: .4s;
+}
+.videoContainer > div > .comments > div > .commentInput > input::placeholder{
+    font-weight: 400;
+    color: var(--text-unavaliable);
+}
+.videoContainer > div > .comments > div > .commentInput > input:focus{
+    border: none;
+    outline: none;
+    border-bottom: thin solid var(--text);
+}
+.videoContainer > div > .comments > div > .commentInput > button{
+    padding: 4px 8px;
+    margin: 5px auto;
+    float: right;
+
+    border: none;
+    border-radius: 5px;
+    background-color: var(--text-unavaliable);
+
+    color: var(--text);
+    font-weight: 400;
+}
+
+.videoContainer > div > .comments > .commentBox{
+    margin: 10px auto;
+    width: 90%;
+     
+    color: var(--text);
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+}
+.videoContainer > div > .comments > .commentBox > img {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+}
+.videoContainer > div > .comments > .commentBox > div > h1{
+    font-size: 18px;
+    font-weight: 700;
+}
+.videoContainer > div > .comments > .commentBox > div > p{
+    font-size: 12px;
+    font-weight: 300;
+}
+.videoContainer > div > .comments > .commentBox + .commentBox{
+    margin-top: 30px;
+}

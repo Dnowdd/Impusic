@@ -36,11 +36,9 @@ class Home extends Page{
 
         //VIEW DA HOME
         $content = View::render('pages/home',[
-            'header' => self::getPiece('header'),
             'hero' => self::getPiece('hero'),
             'banner' => self::getPiece('banner'),
-            'videoCard' => self::getVideoBox(),
-            'footer' => self::getPiece('footer')
+            'videoCard' => self::getVideoBox()
         ]);
 
         //RETORNA A VIEW DA PÁGINA

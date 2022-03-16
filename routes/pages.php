@@ -10,6 +10,13 @@ $obRouter->get('/',[
     }
 ]);
 
+//ROTA WATCH
+$obRouter->get('/watch',[
+    function(){
+        return new Response(200,Pages\Watch::getWatch());
+    }
+]);
+
 /* //ROTA DISCORD
 $obRouter->get('/discord',[
     'middlewares' => [

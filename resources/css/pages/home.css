@@ -1,0 +1,140 @@
+/* HERO */
+.hero{
+    width: 100%;
+    height: 75vh;
+
+    background-image: url('https://via.placeholder.com/1920x1080?text=BANNER'), linear-gradient(146deg, rgba(14,14,14,1) 0%, rgba(119,119,119,0.3249008221452644) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: var(--text);
+    font-weight: 900;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.hero > div{
+    width: 80%;
+    text-align: center;
+    display: grid;
+    justify-items: center;
+}
+
+.hero > div > h1{
+    width: 200px;
+    animation: digitando 2s steps(25), blink 1s infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+}
+
+.hero > div > p{
+    width: 70%;
+    font-weight: 100;
+}
+
+@keyframes digitando {
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    40%{
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.banner{
+    width: 100%;
+    overflow: hidden;
+
+    background-image: url('https://via.placeholder.com/1920x1080?text=BANNER'), linear-gradient(146deg, rgba(14,14,14,1) 0%, rgba(119,119,119,0.3249008221452644) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    text-align: justify;
+
+    margin: 15px 0;
+
+    color: var(--text);
+}
+
+.banner > div{
+    width: 50%;
+    margin: 25px 0;
+}
+.banner > div > p{
+    font-weight: 100;
+}
+
+.videoBox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.videoBoxTitle{
+    color: white;
+    display: block;
+    font-size: 20px;
+    
+    width: 80%;
+    margin: 20px auto;
+}
+.videoCard{
+    display: block;
+    width: 25%;
+    height: 275px;
+    max-height: 275px;
+}
+.videoCard > div:last-child{
+    padding: 0 20px;
+}
+.videoCard > div > h1,
+.videoCard > div > h1 > a{
+    color: var(--title-bt);
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+
+    /* SET ELLIPSES */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    transition: .3s;
+}
+.videoCard > div > h1:hover,
+.videoCard > div > h1 > a:hover{
+    color: var(--title-bt-hover);
+}
+.videoCard > div > p{
+    color: var(--desc-bt);
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 3px;
+
+    max-width: 80%;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.videoCard > div > a > img{
+    width: 100%;
+}
+.fa-circle{
+    color: var(--desc);
+    font-size: 2px;
+    vertical-align: middle;
+}
