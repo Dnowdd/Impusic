@@ -1,0 +1,50 @@
+<style>
+    body{
+        background-image: url('{{URL}}/resources/images/background-perso.svg') !important;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<div class="videoDetails">
+    <form action="">
+        <h1>Publicar vídeo:</h1>
+
+        <div class="inputBox">
+            <label for="">Título (obrigatório)</label>
+            <textarea required maxlength="100" placeholder="Adicione um título ao seu vídeo"></textarea>
+        </div>
+
+        <br>
+
+        <div class="inputBox inputBoxDescription">
+            <label for="">Descrição</label>
+            <textarea maxlength="5000" placeholder="Fale sobre seu vídeo para os espectadores"></textarea>
+        </div>
+
+        <br>
+
+        <div class="selectBox">
+            <h1>Miniatura</h1>
+            <span class="comment">(recomendado: 1920x1080)</span>
+            <h2>Selecione ou faça upload de uma imagem que mostre o que há no seu vídeo. Uma boa miniatura se destaca e chama a atenção dos espectadores.</h2>
+            
+            <div>
+                <div class="selectThumbnail" onclick="openInputThumbnail()">
+                    <p><i class="fa-solid fa-image"></i></p>
+                    <p>Fazer upload de miniatura</p>
+                </div>
+    
+                <div class="showThumbnail">
+                    <img src="" id="thumbnailPreview" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <input type="file" name="" id="selectThumbnailInput">
+        </div>
+
+        <div class="publishButton publishButtonDisabled">
+            <button type="submit">Publicar</button>
+        </div>
+    </form>
+</div>

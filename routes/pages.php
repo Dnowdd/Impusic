@@ -17,6 +17,13 @@ $obRouter->get('/watch',[
     }
 ]);
 
+//ROTA UPLOAD
+$obRouter->get('/upload',[
+    function(){
+        return new Response(200,Pages\Upload::getUpload());
+    }
+]);
+
 /* //ROTA DISCORD
 $obRouter->get('/discord',[
     'middlewares' => [

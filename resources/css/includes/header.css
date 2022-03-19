@@ -10,6 +10,7 @@
 
     --background-color-1: #000000;
     --background-color-2: #1d1d1d;
+    --background-color-3: #000000;
 
     /* video card root */
     /* bt = black theme
@@ -65,7 +66,7 @@ header{
     width: 100vw;
     height: var(--header-height);
 
-    background-color: var(--header-background);
+    background-color: transparent;
 
     display: flex;
     justify-content: space-between;
@@ -76,7 +77,12 @@ header{
     left: 0;
     top: 0;
 
+    transition: .3s;
+
     z-index: 9999;
+}
+.sticky{
+    background-color: var(--header-background);
 }
 
 header > div > a > img{
