@@ -51,4 +51,16 @@ class Page{
             'footer' => ''
         ]);
     }
+
+    /**
+     * Método responsável por renderizar a view do painel com conteúdos dinâmicos
+     * @param string $title
+     * @param string $content
+     * @param string $currentModule
+     * @return string
+     */
+    public static function getPanel($css,$title,$content){
+        //RETORNA A PÁGINA RENDERIZADA
+        return self::getPage($css,$title,'',$content);
+    }
 }

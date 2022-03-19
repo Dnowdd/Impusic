@@ -7,19 +7,19 @@
     }
 </style>
 <div class="videoDetails">
-    <form action="">
+    <form method="post" enctype="multipart/form-data">
         <h1>Publicar vídeo:</h1>
 
         <div class="inputBox">
             <label for="">Título (obrigatório)</label>
-            <textarea required maxlength="100" placeholder="Adicione um título ao seu vídeo"></textarea>
+            <textarea name="title" required maxlength="100" placeholder="Adicione um título ao seu vídeo"></textarea>
         </div>
 
         <br>
 
         <div class="inputBox inputBoxDescription">
             <label for="">Descrição</label>
-            <textarea maxlength="5000" placeholder="Fale sobre seu vídeo para os espectadores"></textarea>
+            <textarea name="description" maxlength="5000" placeholder="Fale sobre seu vídeo para os espectadores"></textarea>
         </div>
 
         <br>
@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <input type="file" name="" id="selectThumbnailInput">
+            <input type="file" name="thumbnail" id="selectThumbnailInput">
         </div>
 
         <div class="publishButton publishButtonDisabled">
@@ -48,3 +48,5 @@
         </div>
     </form>
 </div>
+
+{{imgs}}
