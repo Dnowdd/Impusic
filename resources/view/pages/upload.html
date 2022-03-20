@@ -6,9 +6,37 @@
         background-repeat: no-repeat;
     }
 </style>
+
+<!-- PLAYER DE VÍDEO -->
+<link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css" />
+<script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
+
 <div class="videoDetails">
     <form method="post" enctype="multipart/form-data">
         <h1>Publicar vídeo:</h1>
+
+        <div class="selectBox selectVideo">
+            <h1>Vídeo</h1>
+            <span class="comment">(limite máximo: 15 minutos)</span>
+            <h2>Selecione o vídeo que deseja publicar. Uma boa edição faz com que seu vídeo seja melhor recepcionado por seus espectadores.</h2>
+            
+            <div>
+                <div class="selectThumbnail" onclick="openVideoThumbnail()">
+                    <p><i class="fa-solid fa-video"></i></p>
+                    <p>Fazer upload do vídeo</p>
+                </div>
+    
+                <div class="showThumbnail">
+                    <video id="player" playsinline controls>
+                        <source id="videoPreview" src="#" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+
+            <input type="file" name="video" id="selectVideoInput">
+        </div>
+
+        <br>
 
         <div class="inputBox">
             <label for="">Título (obrigatório)</label>
@@ -36,7 +64,8 @@
                 </div>
     
                 <div class="showThumbnail">
-                    <img src="" id="thumbnailPreview" onerror="this.style.display='none'">
+                    <h1>Preview</h1>
+                    <img src="{{URL}}/resources/images/icons/null.png" id="thumbnailPreview">
                 </div>
             </div>
 

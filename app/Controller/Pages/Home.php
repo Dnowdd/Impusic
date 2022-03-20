@@ -57,7 +57,7 @@ class Home extends Page{
             $videoCard .= View::render('pages/home/videoCard',[
                 'videoTitle' => $obUser->title,
                 'channel' => $obUser->channel,
-                'thumbnail' => str_replace(array("\r", "\n"), '',$obUser->thumbnail),
+                'thumbnail' => $obUser->thumbnail,
                 'time' => $time
             ]);
         } 
