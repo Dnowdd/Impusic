@@ -40,7 +40,7 @@ class Videos{
      * Data do video
      * @var string
      */
-    public $data = "data";
+    public $date;
 
     /**
      * Método responsável por cadastrar a instancia atual no banco de dados
@@ -53,7 +53,7 @@ class Videos{
             'description' => $this->description,
             'channel' => $this->channel,
             'thumbnail' => $this->thumbnail,
-            'data' => $this->data
+            'date' => $this->date
         ]);
 
         //SUCESSO
@@ -70,7 +70,7 @@ class Videos{
             'description' => $this->description,
             'channel' => $this->channel,
             'thumbnail' => $this->thumbnail,
-            'data' => $this->data
+            'date' => $this->date
         ]);
     }
 
