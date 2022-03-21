@@ -58,7 +58,8 @@ class Home extends Page{
                 'videoTitle' => $obUser->title,
                 'channel' => $obUser->channel,
                 'thumbnail' => $obUser->thumbnail,
-                'time' => $time
+                'time' => $time,
+                'link' => trim($obUser->video)
             ]);
         } 
 

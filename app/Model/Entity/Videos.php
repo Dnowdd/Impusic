@@ -37,6 +37,12 @@ class Videos{
     public $thumbnail;
 
     /**
+     * Link do video
+     * @var string
+     */
+    public $video;
+
+    /**
      * Data do video
      * @var string
      */
@@ -53,6 +59,7 @@ class Videos{
             'description' => $this->description,
             'channel' => $this->channel,
             'thumbnail' => $this->thumbnail,
+            'video' => $this->video,
             'date' => $this->date
         ]);
 
@@ -70,6 +77,7 @@ class Videos{
             'description' => $this->description,
             'channel' => $this->channel,
             'thumbnail' => $this->thumbnail,
+            'video' => $this->video,
             'date' => $this->date
         ]);
     }
@@ -89,6 +97,15 @@ class Videos{
      */
     public static function getVideoById($id){
         return self::getVideos('id = '.$id)->fetchObject(self::class);
+    }
+
+    /**
+     * Método responsável por retornar uma instancia com base em seu id
+     * @param integer $id
+     * @return User
+     */
+    public static function getVideoByLink($id){
+        return self::getVideos('video = '.$id)->fetchObject(self::class);
     }
 
     /**

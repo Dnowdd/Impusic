@@ -99,6 +99,15 @@ class Upload extends Page{
             }
         }
 
+        if(isset($_FILES['video'])){
+            //ENVIA E VERIFICA O S3
+            $sendS3 = self::sendS3('video',$keyName);
+            if($sendS3 != true){
+                return false;
+                exit;
+            }
+        }
+
         //RESGATA O TIMESTAMP DO ENVIO DO VÍDEO
         $date = date_create();
         $timestamp = date_timestamp_get($date);
@@ -109,12 +118,14 @@ class Upload extends Page{
         $title = $postVars['title'] ?? '';
         $description = $postVars['description'] ?? '';
         $thumbnail = $keyName ?? '';
+        $video = $keyName ?? '';
 
         //NOVA INSTANCIA DE USUÁRIO
         $obUser = new EntityVideos;
         $obUser->title = $title;
         $obUser->description = $description;
         $obUser->thumbnail = $thumbnail;
+        $obUser->video = $video;
         $obUser->date = $timestamp;
         $obUser->cadastrar();
 

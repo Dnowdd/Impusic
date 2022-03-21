@@ -1,3 +1,6 @@
+:root{
+    --video-card-image-height: 160px;
+}
 /* HERO */
 .hero{
     width: 100%;
@@ -90,8 +93,7 @@
 .videoCard{
     display: block;
     width: 25%;
-    height: 275px;
-    max-height: 275px;
+    padding: 20px 0;
 }
 .videoCard > div:last-child{
     padding: 0 20px;
@@ -104,11 +106,11 @@
     text-decoration: none;
 
     /* SET ELLIPSES */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    margin-top: 7px;
 
     transition: .3s;
 }
@@ -128,8 +130,13 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.videoCard > div > a > div,
 .videoCard > div > a > img{
+    background-position: center;
+    background-size: cover;
+
     width: 100%;
+    height: var(--video-card-image-height);
 }
 .fa-circle{
     color: var(--desc);

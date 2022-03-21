@@ -7,15 +7,15 @@
     <div class="videoPlayer">
         <div>
             <video id="player" playsinline controls autoplay data-poster="/path/to/poster.jpg">
-                <source src="https://d3iltpz9q3tbnd.cloudfront.net/Malvadão%203%20-%20Xamã%20-%20Bia%20Marques%20(cover).mp4" type="video/mp4" />
+                <source src="https://d3iltpz9q3tbnd.cloudfront.net/{{video}}%0A-video" type="video/mp4" />
             </video>
         </div>
         <div class="header">
-            <h1 id="videoTitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta fugiat provident blanditiis perferendis est itaque minima! Incidunt nobis reprehenderit, praesentium autem facilis ex tempora, delectus rem in asperiores possimus excepturi!</h1>
+            <h1 id="videoTitle">{{title}}</h1>
             <span>
                 <p><i class="fa-solid fa-angle-up"></i> <span id="likes">0</span></p>
-                <p><i class="fa-solid fa-angle-down"></i> <span id="deslikes">0</span></p>
             </span>
+            <h2>{{description}}</h2>
         </div>
     </div>
     <div>

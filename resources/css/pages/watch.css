@@ -1,6 +1,11 @@
 :root{
     --plyr-color-main: #710c04;
     --submit: rgb(2, 88, 187);
+
+    --video-title-color: rgb(221, 221, 221);
+    --video-description-color: rgb(199, 199, 199);
+    --comment-title-color: rgb(231, 231, 231);
+    --comment-description-color: rgb(211, 211, 211);
 }
 
 #player{
@@ -30,6 +35,21 @@
 .videoContainer > .videoPlayer > div > h1{
     font-size: 20px;
     padding: 5px 0;
+
+    max-width: 100%;
+    word-break: break-all;
+
+    color: var(--video-title-color);
+}
+.videoContainer > .videoPlayer > div > h2{
+    font-size: 14px;
+    font-weight: 300;
+    padding: 2px 0;
+
+    max-width: 100%;
+    word-break: break-all;
+
+    color: var(--video-description-color);
 }
 
 .videoContainer > .videoPlayer > div > span{
@@ -146,10 +166,12 @@
     border-radius: 100%;
 }
 .videoContainer > div > .comments > .commentBox > div > h1{
+    color: var(--comment-title-color);
     font-size: 18px;
     font-weight: 700;
 }
 .videoContainer > div > .comments > .commentBox > div > p{
+    color: var(--comment-description-color);
     font-size: 12px;
     font-weight: 300;
 }

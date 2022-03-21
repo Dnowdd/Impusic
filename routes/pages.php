@@ -12,8 +12,15 @@ $obRouter->get('/',[
 
 //ROTA WATCH
 $obRouter->get('/watch',[
-    function(){
-        return new Response(200,Pages\Watch::getWatch());
+    function($request){
+        return new Response(200,Pages\Watch::getWatch(''));
+    }
+]);
+
+//ROTA WATCH Dinamica
+$obRouter->get('/watch/{codeVideo}',[
+    function($codeVideo){
+        return new Response(200,Pages\Watch::getWatch($codeVideo));
     }
 ]);
 
