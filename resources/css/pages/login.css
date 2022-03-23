@@ -1,0 +1,174 @@
+:root{
+    --formBackground: #282828;
+
+    --input-border-normal: rgba(128, 128, 128, 0.3);
+    --input-border-hover: rgba(128, 128, 128, 0.9);
+
+    --input-label-color-normal: rgba(128, 128, 128, 0.9);
+
+    --form-title-color: rgb(223, 223, 223);
+    --form-description-color: rgb(139, 139, 139);
+}
+
+.loginMenu{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.loginMenu > form{
+    width: 45vw;
+    position: relative;
+
+    background-color: var(--formBackground);
+    border-radius: 5px;
+
+    padding: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginMenu > form > .close{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.loginMenu > form > .close > i{
+    font-size: 20px;
+    color: var(--input-border-hover);
+    cursor: pointer !important;
+    transition: .3s;
+}
+.loginMenu > form > .close:hover > i{
+    color: var(--form-title-color);
+}
+.loginMenu > form > .inputBox{
+    border: thin solid var(--input-border-normal);
+    border-radius: 5px;
+    padding: 10px;
+
+    width: 80%;
+
+    transition: .3s;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 5px;
+}
+.loginMenu > form > .inputBox:hover{
+    border: thin solid var(--input-border-hover);
+}
+.loginMenu > form > .inputBox > label{
+    color: var(--input-label-color-normal);
+
+    font-size: 12px;
+    font-weight: 300;
+}
+.loginMenu > form > .inputBox > input{
+    background-color: transparent;
+    resize: none;
+    font-size: 15px;
+
+    color: var(--text);
+}
+.loginMenu > form > .inputBox > input:focus{
+    outline: none;
+}
+.loginMenu > form > .inputBox > input::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+.loginMenu > form > .inputBox > input::-webkit-scrollbar-track {
+    background: transparent;
+}
+.loginMenu > form > .inputBox > input::-webkit-scrollbar-thumb {
+    background-color: var(--input-border-normal);
+    border-radius: 2px;
+}
+
+.loginMenu > form > .selectBox{
+    padding: 10px 5px;
+
+    width: 500px;
+
+    transition: .3s;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 5px;
+}
+.loginMenu > form > .selectBox > h1{
+    color: var(--form-title-color);
+
+    font-size: 16px;
+    font-weight: 500;
+}
+.loginMenu > form > .selectBox > span{
+    color: var(--text-unavaliable);
+    font-style: italic;
+    font-size: 10px;
+}
+.loginMenu > form > .selectBox > h2{
+    color: var(--form-description-color);
+
+    font-size: 14px;
+    font-weight: 300;
+}
+.loginMenu > form > .selectBox > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.loginMenu > form > .selectBox > div > .selectThumbnail{
+    width: 200px;
+    height: 100px;
+    border: thin dashed var(--input-border-normal);
+
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+
+    transition: .2s;
+    cursor: pointer;
+}
+
+.loginMenu > form > .publishButton{
+    width: 80%;
+    text-align: right;
+}
+.loginMenu > form > .publishButton > button{
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+.loginMenu > form > .publishButton > button:hover{
+    background-color: var(--form-description-color);
+}
+.loginMenu > form > .publishButtonDisabled > button{
+    background-color: var(--text-unavaliable);
+    color: var(--formBackground);
+    cursor: inherit;
+}
+.loginMenu > form > .publishButtonDisabled > button:hover{
+    background-color: var(--text-unavaliable);
+}
+
+.loginMenu > form > h1{
+    color: var(--form-title-color);
+    font-size: 20px;
+
+    margin: 0 auto;
+    margin-bottom: 20px;
+}

@@ -24,13 +24,6 @@ $obRouter->get('/watch/{codeVideo}',[
     }
 ]);
 
-//ROTA UPLOAD
-/* $obRouter->get('/upload',[
-    function(){
-        return new Response(200,Pages\Upload::getUpload());
-    }
-]); */
-
 //ROTA DE CADASTRO DE UM NOVO USUARIO
 $obRouter->get('/upload',[
     function($request){
@@ -42,6 +35,13 @@ $obRouter->get('/upload',[
 $obRouter->post('/upload',[
     function($request){
         return new Response(200,Pages\Upload::setNewVideo($request));
+    }
+]);
+
+//ROTA WATCH
+$obRouter->get('/login',[
+    function($request){
+        return new Response(200,Pages\Login::getLogin());
     }
 ]);
 

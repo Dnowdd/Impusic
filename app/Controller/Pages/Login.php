@@ -30,7 +30,7 @@ class Login extends Page{
         //RETORNA A VIEW DA PÁGINA
         return parent::getPage(
             //NOME DE ARQUIVOS CSS,JS...
-            'home',
+            'login',
             //TITLE DA PÁGINA
             'Entrar na sua conta - '.$obOrganization->name,
             //DESCRIÇÃO DA PÁGINA
