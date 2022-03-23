@@ -16,6 +16,16 @@ class Home extends Page{
         return $itens;
     }
 
+    public static function getPieceWithOrganization($name,$obOrganization){
+        $itens = '';
+
+        $itens .= View::render('pages/home/'.$name, [
+            'title' => $obOrganization->name
+        ]);
+
+        return $itens;
+    }
+
     public static function time_elapsed_string($datetime, $full = false) {
         $now = new \DateTime;
         $ago = new \DateTime($datetime);
@@ -80,7 +90,7 @@ class Home extends Page{
 
         //VIEW DA HOME
         $content = View::render('pages/home',[
-            'hero' => self::getPiece('hero'),
+            'hero' => self::getPieceWithOrganization('hero',$obOrganization),
             'banner' => self::getPiece('banner'),
             'videoBox' => self::getVideoBox()
         ]);
@@ -90,7 +100,7 @@ class Home extends Page{
             //NOME DE ARQUIVOS CSS,JS...
             'home',
             //TITLE DA PÁGINA
-            'RiftMaker',
+            $obOrganization->name,
             //DESCRIÇÃO DA PÁGINA
             'Bem-vindos ao RiftMaker.com - Análise as estatísticas de invocadores, melhores campeões, ranking competitivo, times de Clash, Profissionais e muito mais',
             //CONTEUDO DA PÁGINA

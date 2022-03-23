@@ -1,6 +1,6 @@
 const player = new Plyr('#player');
 
-function setTitle(){
+/* function setTitle(){
     var title = $('#videoTitle').text();
 
     // SE O TÍTULO FOR MAIOR QUE O NÚMERO DE CARACTERES DELIMITADO ADICIONA UMA RETICÊNCIAS
@@ -10,4 +10,4 @@ function setTitle(){
     document.title = title;
 }
 
-setTitle();
+setTitle(); */
