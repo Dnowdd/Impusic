@@ -16,3 +16,11 @@ window.onload = function() {
 window.onscroll = function() {
     locationVerification()
 }
+
+
+function openForm(id){
+    $('#'+id).css("display", "grid");
+}
+function closeForm(id){
+    $('#'+id).css("display", "none");
+}

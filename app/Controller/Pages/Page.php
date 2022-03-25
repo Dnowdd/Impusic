@@ -23,6 +23,22 @@ class Page{
     }
 
     /**
+     * Método responsável por renderizar o formulário de login de conta
+     * @return string
+     */
+    private static function getLogin(){
+        return View::render('pages/login');
+    }
+
+    /**
+     * Método responsável por renderizar o formulário de registro de conta
+     * @return string
+     */
+    private static function getRegister(){
+        return View::render('pages/register');
+    }
+
+    /**
      * Método responsável por retornar o conteúdo (view) da nossa página genérica
      * @return string
      */
@@ -32,6 +48,8 @@ class Page{
             'title' => $title,
             'description' => $description,
             'header' => self::getHeader(),
+            'login' => self::getLogin(),
+            'register' => self::getRegister(),
             'content' => $content,
             'footer' => self::getFooter()
         ]);

@@ -29,7 +29,7 @@
     animation: digitando 2s steps(25), blink 1s infinite alternate;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid;
+    border-right: 2px solid rgba(144, 42, 253, 0.2);
 }
 
 .hero > div > p{
@@ -45,7 +45,7 @@
 
 @keyframes blink {
     40%{
-        border-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(144, 42, 253, 0.5);
     }
 }
 

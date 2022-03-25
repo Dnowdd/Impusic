@@ -1,6 +1,6 @@
-<!-- <div class="loginMenu">
+<div class="loginMenu" id="loginForm">
     <form method="post">
-        <div class="close">
+        <div class="close" onclick="closeForm('loginForm')">
             <i class="fa-solid fa-xmark"></i>
         </div>
 
@@ -21,49 +21,7 @@
         <br>
 
         <div class="publishButton publishButtonDisabled">
-            <button type="submit">Publicar</button>
-        </div>
-    </form>
-</div> -->
-
-<div class="loginMenu">
-    <form method="post">
-        <div class="close">
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-
-        <h1>Registrar uma conta:</h1>
-        
-        <div class="inputBox">
-            <label for="">Nome</label>
-            <input name="title" required type="text" placeholder="Digite aqui o seu nome" />
-        </div>
-
-        <br>
-
-        <div class="inputBox">
-            <label for="">Nome de usuário (nome único)</label>
-            <input name="title" required type="text" placeholder="Digite aqui o seu nome de usuário" />
-        </div>
-
-        <br>
-
-        <div class="inputBox">
-            <label for="">Email</label>
-            <input name="description" required type="email" placeholder="Digite aqui seu email" />
-        </div>
-
-        <br>
-
-        <div class="inputBox">
-            <label for="">Senha</label>
-            <input name="description" required type="password" placeholder="Escreva aqui corretamente sua senha" />
-        </div>
-
-        <br>
-
-        <div class="publishButton publishButtonDisabled">
-            <button type="submit">Publicar</button>
+            <button type="submit">Entrar</button>
         </div>
     </form>
 </div>

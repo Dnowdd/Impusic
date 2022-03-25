@@ -38,13 +38,6 @@ $obRouter->post('/upload',[
     }
 ]);
 
-//ROTA WATCH
-$obRouter->get('/login',[
-    function($request){
-        return new Response(200,Pages\Login::getLogin());
-    }
-]);
-
 //ROTA Teste Show
 /* $obRouter->get('/show',[
     function(){

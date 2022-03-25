@@ -18,6 +18,11 @@
     --title-bt: rgb(230, 230, 230);
     --title-bt-hover: rgb(170, 170, 170);
     --desc-bt: rgb(169, 169, 169);
+
+    /* COLOR OF LOGO */
+    --color-theme-one: #c320f6;
+    --color-theme-two: #7613e6;
+    --color-theme-three: #9d1dd2;
 }
 
 * {
@@ -55,11 +60,11 @@ body::-webkit-scrollbar-thumb {
   
 
 a{
-    color: rgb(127, 197, 255);
+    color: var(--color-theme-one);
     transition: .3s;
 }
 a:hover{
-    color: rgb(48, 125, 187);
+    color: var(--color-theme-three);
 }
 
 header{
@@ -110,6 +115,29 @@ header > div > a > img{
 #itens a:hover,
 #itens li:hover{
     color: var(--text-hover);
+}
+
+#itens button{
+    background: var(--color-theme-one);
+    background: linear-gradient(225deg, var(--color-theme-one) 0%, var(--color-theme-two) 100%);
+
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: thin solid var(--color-theme-three);
+
+    color: white;
+    cursor: pointer;
+}
+#itens .login button{
+    background: -webkit-linear-gradient(var(--color-theme-one), var(--color-theme-two));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#itens a + .buttons{
+    margin-left: 20px;
+}
+#itens .buttons + .buttons{
+    margin-left: 5px;
 }
 
 /* FOOTER */
