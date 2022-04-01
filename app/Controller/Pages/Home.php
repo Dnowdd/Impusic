@@ -107,5 +107,4 @@ class Home extends Page{
             $content
         );
     }
-
 }

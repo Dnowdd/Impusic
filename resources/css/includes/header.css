@@ -41,7 +41,8 @@ body {
 
 body,
 html {
-    box-sizing: border-box
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
