@@ -38,6 +38,13 @@ $obRouter->post('/upload',[
     }
 ]);
 
+//ROTA DE CADASTRO DE UM NOVO USUARIO (POST)
+$obRouter->post('/register',[
+    function($request){
+        return new Response(200,Pages\Channel::setNewChannel($request));
+    }
+]);
+
 //ROTA Teste Show
 /* $obRouter->get('/show',[
     function(){
