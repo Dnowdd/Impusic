@@ -2,7 +2,7 @@
 
 :root{
     --header-height: 80px;
-    --header-background: rgba(0, 0, 0, 0.6);
+    --header-background: rgba(0, 0, 0, 0.5);
     --text: rgb(255, 255, 255);
     --text-hover: rgb(189, 189, 189);
 
@@ -67,6 +67,8 @@ a:hover{
     color: var(--color-theme-three);
 }
 
+
+/* HEADER */
 header{
     width: 100vw;
     height: var(--header-height);
@@ -76,7 +78,7 @@ header{
     display: flex;
     justify-content: space-between;
 
-    padding: 0 100px;
+    padding: 0 5vw;
 
     position: fixed;
     left: 0;
@@ -90,34 +92,34 @@ header{
     background-color: var(--header-background);
 }
 
-header > div > a > img{
+/* header > div > a > img{
     width: var(--header-height);
-}
+} */
 
-#itens{
+header > div{
     display: flex;
     align-items: center;
 }
-
-#itens a,
-#itens li{
+header > #itens a,
+header > #itens li{
     display: inline;
     text-align: center;
 
     text-decoration: none;
     color: var(--text);
 
+    font-weight: 100;
+
     transition: .3s;
 }
-#itens a + a{
+header > #itens a + a{
     margin-left: 20px;
 }
-#itens a:hover,
-#itens li:hover{
+header > #itens a:hover,
+header > #itens li:hover{
     color: var(--text-hover);
 }
-
-#itens button{
+header > #itens button{
     background: var(--color-theme-one);
     background: linear-gradient(225deg, var(--color-theme-one) 0%, var(--color-theme-two) 100%);
 
@@ -128,20 +130,60 @@ header > div > a > img{
     color: white;
     cursor: pointer;
 }
-#itens .login button{
+header > #itens .login button{
     background: -webkit-linear-gradient(var(--color-theme-one), var(--color-theme-two));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-#itens a + .buttons{
+header > #itens a + .buttons{
     margin-left: 20px;
 }
-#itens .buttons + .buttons{
+header > #itens .buttons + .buttons{
     margin-left: 5px;
 }
 
-/* FOOTER */
+header > #search > div{
+    width: 300px;
 
+    border-radius: 10px;
+    position: relative;
+    display: grid;
+    align-items: center;
+}
+header > #search > div > input{
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+    border: thin solid white;
+    border-radius: 10px;
+    color: var(--text);
+
+
+    padding: 5px 10px;
+
+    font-weight: 200;
+}
+header > #search > div > input::placeholder{
+    color: var(--text-hover);
+}
+header > #search > div > input:focus{
+    outline: none;
+}
+header > #search > div > label{
+    color: var(--text);
+    position: absolute;
+    right: 10px;
+    font-size: 13px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+header > #search > div > label:hover{
+    color: var(--text-hover);
+}
+
+/* FOOTER */
 footer{
     width: 100%;
     height: 200px;
@@ -156,7 +198,6 @@ footer{
 
     color: var(--text);
 }
-
 footer > div{
     width: 25%;
     padding: 20px;
@@ -167,7 +208,6 @@ footer > div{
     align-content: center;
     align-items: center;
 }
-
 footer > div > .footer-hr{
     width: 25%;
     margin: 2px 0 5px -20px;
