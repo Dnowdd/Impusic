@@ -26,7 +26,12 @@ class Channel extends Page{
         $email = $postVars['email'] ?? '';
         $password = $postVars['password'] ?? '';
 
-        //VALIDA O EMAIL DO USUARIO
+        //VERIFICA EMAIL
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            return false;
+        }
+        
+        //VALIDA O EMAIL E USER DO USUARIO
         $obChannelEmail = EntityChannel::getChannelByEmail($email);
         $obChannelUser = EntityChannel::getChannelByUser($user);
         if($obChannelEmail instanceof EntityChannel || $obChannelUser instanceof EntityChannel){
