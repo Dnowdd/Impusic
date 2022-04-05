@@ -5,6 +5,7 @@ namespace App\Controller\Pages;
 use \App\Utils\View;
 use \App\Model\Entity\Channel as EntityChannel;
 use \App\Model\Entity\Organization;
+use \App\Session\Admin\Login as SessionAdminLogin;
 
 class Channel extends Page{
     /**
@@ -28,6 +29,9 @@ class Channel extends Page{
 
         //VERIFICA EMAIL
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            echo $email;
+            echo "<br>";
+            var_dump("Email invalido");
             return false;
         }
         
@@ -52,4 +56,49 @@ class Channel extends Page{
         //REDIRECIONA O USUÁRIO
         $request->getRouter()->redirect('/tcc');
     }
+
+    /**
+     * Método responsável por definir o login do usuário
+     * @param Request $request
+     * @return string
+     */
+    public static function setLogin($request){
+        //POST VARS
+        $postVars = $request->getPostVars();
+        $email = $postVars['email'] ?? '';
+        $senha = $postVars['password'] ?? '';
+
+        //BUSCA O USUÁRIO PELO E-MAIL
+        $obChannelEmail = EntityChannel::getChannelByEmail($email);
+
+        if(!$obChannelEmail instanceof EntityChannel){
+            // EMAIL OU SENHA INVÁLIDOS
+            $request->getRouter()->redirect('/tcc?status=loginfailed');
+        }
+
+        //VERIFICA A SENHA DO USUÁRIO
+        if(!password_verify($senha,$obChannelEmail->password)){
+            // EMAIL OU SENHA INVÁLIDOS
+            $request->getRouter()->redirect('/tcc?status=loginfailed');
+        }
+
+        //CRIA A SESSÃO DE LOGIN
+        SessionAdminLogin::login($obChannelEmail);
+
+        //REDIRECIONA O USUÁRIO PARA A HOME DO ADMIN
+        $request->getRouter()->redirect('/tcc');
+    }
+
+    /**
+     * Método responsável por deslogar o usuário
+     * @param Request $request
+     */
+    public static function setLogout($request){
+        //DESTRÓI A SESSÃO DE LOGIN
+        SessionAdminLogin::logout();
+
+        //REDIRECIONA O USUÁRIO PARA A TELA DE LOGIN
+        $request->getRouter()->redirect('/tcc');
+    }
+
 }

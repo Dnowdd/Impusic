@@ -24,9 +24,9 @@ class Login{
         self::init();
 
         //DEFINE A SESSÃO DO USUÁRIO
-        $_SESSION['admin']['usuario'] = [
+        $_SESSION['admin']['user'] = [
             'id' => $obUser->id,
-            'nome' => $obUser->nome,
+            'name' => $obUser->nome,
             'email' => $obUser->email
         ];
 
@@ -43,7 +43,7 @@ class Login{
         self::init();
 
         //RETORNA A VERIFICAÇÃO
-        return isset($_SESSION['admin']['usuario']['id']);
+        return isset($_SESSION['admin']['user']['id']);
     }
 
     /**
@@ -55,7 +55,7 @@ class Login{
         self::init();
 
         //DESLOGA O USUÁRIO
-        unset($_SESSION['admin']['usuario']);
+        unset($_SESSION['admin']['user']);
 
         //SUCESSO
         return true;

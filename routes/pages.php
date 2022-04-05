@@ -45,6 +45,13 @@ $obRouter->post('/register',[
     }
 ]);
 
+//ROTA DE LOGIN DE UM USUARIO (POST)
+$obRouter->post('/login',[
+    function($request){
+        return new Response(200,Pages\Channel::setLogin($request));
+    }
+]);
+
 //ROTA Teste Show
 /* $obRouter->get('/show',[
     function(){
