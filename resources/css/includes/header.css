@@ -184,6 +184,29 @@ header > #search > div > label:hover{
     color: var(--text-hover);
 }
 
+header > #itens > .profile{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+header > #itens > .profile > form > button{
+    all: inherit;
+}
+header > #itens > .profile > form > button > i{
+    color: var(--text);
+    cursor: pointer;
+    transition: .3s;
+}
+header > #itens > .profile > form > button > i:hover{
+    color: var(--text-hover);
+}
+header > #itens > .profile > img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
 /* FOOTER */
 footer{
     width: 100%;

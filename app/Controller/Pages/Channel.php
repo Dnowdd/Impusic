@@ -92,6 +92,7 @@ class Channel extends Page{
     /**
      * Método responsável por deslogar o usuário
      * @param Request $request
+     * @return string
      */
     public static function setLogout($request){
         //DESTRÓI A SESSÃO DE LOGIN

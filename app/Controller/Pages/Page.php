@@ -4,6 +4,7 @@ namespace App\Controller\Pages;
 
 use \App\Utils\View;
 use \App\Controller\Pages;
+use \App\Session\Admin\Login as SessionAdminLogin;
 
 class Page{
     /**
@@ -38,6 +39,20 @@ class Page{
         return View::render('pages/register');
     }
 
+    public static function getSignButtons(){
+        $itens = '';
+
+        if(!SessionAdminLogin::isLogged()){
+            $itens = View::render('pages/home/signButtons', [
+            ]);
+        }else{
+            $itens = View::render('pages/home/profileButton', [
+            ]);
+        }
+
+        return $itens;
+    }
+
     /**
      * Método responsável por retornar o conteúdo (view) da nossa página genérica
      * @return string
@@ -48,6 +63,7 @@ class Page{
             'title' => $title,
             'description' => $description,
             'header' => self::getHeader(),
+            'profileSettings' => self::getSignButtons(),
             'login' => self::getLogin(),
             'register' => self::getRegister(),
             'content' => $content,

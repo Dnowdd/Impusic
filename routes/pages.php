@@ -52,6 +52,14 @@ $obRouter->post('/login',[
     }
 ]);
 
+//ROTA DE LOGOUT DE UM USUARIO (POST)
+$obRouter->post('/logout',[
+    function($request){
+        return new Response(200,Pages\Channel::setLogout($request));
+    }
+]);
+
+
 //ROTA Teste Show
 /* $obRouter->get('/show',[
     function(){
