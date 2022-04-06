@@ -3,42 +3,36 @@
 namespace App\Controller\Pages;
 
 use \App\Utils\View;
+use \App\Model\Entity\Channel as EntityChannel;
 use \App\Model\Entity\Organization;
+use \App\Session\Admin\Login as SessionAdminLogin;
 
-class Upload extends Page{
-    public static function getPiece($name){
-        $itens = '';
-
-        $itens .= View::render('pages/home/'.$name, [
-        ]);
-
-        return $itens;
-    }
-
+class Profile extends Page{
     /**
-     * Método responsável por retornar o conteúdo (view) da nossa Upload Page
+     * Método responsável por retornar o conteúdo (view) da nossa Home
      * @return string
      */
-    public static function getUpload(){
+    public static function getProfile(){
         //Organização
         $obOrganization = new Organization;
 
-        //VIEW DA Upload Page
-        $content = View::render('pages/upload',[
-            
+        $login = SessionAdminLogin::getLogin();
+
+        //VIEW DA HOME
+        $content = View::render('pages/profile',[
+            'name' => $login['name']
         ]);
 
         //RETORNA A VIEW DA PÁGINA
         return parent::getPage(
             //NOME DE ARQUIVOS CSS,JS...
-            'upload',
+            'profile',
             //TITLE DA PÁGINA
-            'Publicar vídeos',
+            $login['name'].' - '.$obOrganization->name,
             //DESCRIÇÃO DA PÁGINA
             'Bem-vindos ao RiftMaker.com - Análise as estatísticas de invocadores, melhores campeões, ranking competitivo, times de Clash, Profissionais e muito mais',
             //CONTEUDO DA PÁGINA
             $content
         );
     }
-
 }

@@ -26,12 +26,18 @@ class Login{
         //DEFINE A SESSÃO DO USUÁRIO
         $_SESSION['admin']['user'] = [
             'id' => $obUser->id,
-            'name' => $obUser->nome,
+            'name' => $obUser->name,
             'email' => $obUser->email
         ];
 
         //SUCESSO
         return true;
+    }
+
+    public static function getLogin(){
+        self::init();
+
+        return $_SESSION['admin']['user'];
     }
 
     /**

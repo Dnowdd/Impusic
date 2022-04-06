@@ -58,6 +58,10 @@ body::-webkit-scrollbar-thumb {
     background-color: rgb(73, 73, 73);    /* color of the scroll thumb */
     border-radius: 2px;       /* roundness of the scroll thumb */
 }
+
+#content{
+    min-height: 100vh;
+}
   
 
 a{

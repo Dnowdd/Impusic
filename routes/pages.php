@@ -59,6 +59,13 @@ $obRouter->post('/logout',[
     }
 ]);
 
+//ROTA HOME
+$obRouter->get('/profile',[
+    function(){
+        return new Response(200,Pages\Profile::getProfile());
+    }
+]);
+
 
 //ROTA Teste Show
 /* $obRouter->get('/show',[
