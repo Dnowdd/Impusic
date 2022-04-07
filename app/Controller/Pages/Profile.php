@@ -17,10 +17,18 @@ class Profile extends Page{
         $obOrganization = new Organization;
 
         $login = SessionAdminLogin::getLogin();
+        $obUser = EntityChannel::getChannelByUser($login['name']);
+
+        $seeMore = '';
+        if($obUser->description != ''){
+            $seeMore = 'Veja Mais.';
+        }
 
         //VIEW DA HOME
         $content = View::render('pages/profile',[
-            'name' => $login['name']
+            'name' => $obUser->name,
+            'description' => $obUser->description,
+            'seeMore' => $seeMore
         ]);
 
         //RETORNA A VIEW DA PÁGINA
@@ -28,7 +36,7 @@ class Profile extends Page{
             //NOME DE ARQUIVOS CSS,JS...
             'profile',
             //TITLE DA PÁGINA
-            $login['name'].' - '.$obOrganization->name,
+            $obUser->name.' - '.$obOrganization->name,
             //DESCRIÇÃO DA PÁGINA
             'Bem-vindos ao RiftMaker.com - Análise as estatísticas de invocadores, melhores campeões, ranking competitivo, times de Clash, Profissionais e muito mais',
             //CONTEUDO DA PÁGINA
