@@ -8,27 +8,44 @@ use \App\Model\Entity\Organization;
 use \App\Session\Admin\Login as SessionAdminLogin;
 
 class Profile extends Page{
+
     /**
      * Método responsável por retornar o conteúdo (view) da nossa Home
      * @return string
      */
-    public static function getProfile(){
+    public static function getProfile($user){
         //Organização
         $obOrganization = new Organization;
 
         $login = SessionAdminLogin::getLogin();
-        $obUser = EntityChannel::getChannelByUser($login['name']);
+        $obUser = EntityChannel::getChannelByUser($user);
 
+        if($obUser->user == $login['user']){
+            $follow = View::render('pages/profile/editContainer', [
+            ]);
+        }else{
+            $follow = View::render('pages/profile/followContainer', [
+            ]);
+        }
+
+        // ADICIONA ELLIPSIS SE A DESCRIÇÃO FOR MAIOR QUE 35C
+        $minDesc = $obUser->description;
+        $pageTitle = strlen($minDesc) > 35 ? substr($minDesc,0,35)."..." : $minDesc;
+
+        // ADICIONA VEJA MAIS SE A DESCRIÇÃO FOR MAIOR QUE 35C
         $seeMore = '';
-        if($obUser->description != ''){
+        if($obUser->description != '' && strlen($minDesc) > 35){
             $seeMore = 'Veja Mais.';
         }
+
+
 
         //VIEW DA HOME
         $content = View::render('pages/profile',[
             'name' => $obUser->name,
-            'description' => $obUser->description,
-            'seeMore' => $seeMore
+            'description' => $minDesc,
+            'seeMore' => $seeMore,
+            'follow' => $follow
         ]);
 
         //RETORNA A VIEW DA PÁGINA

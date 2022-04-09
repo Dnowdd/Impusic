@@ -27,6 +27,7 @@ class Login{
         $_SESSION['admin']['user'] = [
             'id' => $obUser->id,
             'name' => $obUser->name,
+            'user' => $obUser->user,
             'email' => $obUser->email
         ];
 

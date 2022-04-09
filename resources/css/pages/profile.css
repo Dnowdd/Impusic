@@ -7,6 +7,9 @@
 
     --profile-button: #6977F4;
     --profile-button-hover: #3a4dff;
+
+    --profile-button-edit: #76777d;
+    --profile-button-edit-hover: #515255;
 }
 .hero{
     width: 100%;
@@ -111,6 +114,39 @@
 .profileInfo > .settings > .follow:hover,
 .profileInfo > .settings > .more:hover{
     background-color: var(--profile-button-hover);
+}
+
+.profileInfo > .settings > .moreEdit{
+    width: 25px;
+    height: 25px;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    background-color: var(--profile-button-edit);
+    color: white;
+    font-weight: 900;
+    transition: .3s;
+}
+.profileInfo > .settings > .edit{
+    padding: 0 10px;
+    height: 25px;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    background-color: var(--profile-button-edit);
+    color: white;
+    font-weight: 900;
+    transition: .3s;
+}
+.profileInfo > .settings > .edit:hover,
+.profileInfo > .settings > .moreEdit:hover{
+    background-color: var(--profile-button-edit-hover);
 }
 
 .hr{

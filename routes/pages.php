@@ -60,9 +60,9 @@ $obRouter->post('/logout',[
 ]);
 
 //ROTA HOME
-$obRouter->get('/profile',[
-    function(){
-        return new Response(200,Pages\Profile::getProfile());
+$obRouter->get('/profile/{user}',[
+    function($user){
+        return new Response(200,Pages\Profile::getProfile($user));
     }
 ]);
 
