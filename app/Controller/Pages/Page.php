@@ -42,11 +42,14 @@ class Page{
     public static function getSignButtons(){
         $itens = '';
 
+        $login = SessionAdminLogin::getLogin();
+
         if(!SessionAdminLogin::isLogged()){
             $itens = View::render('pages/home/signButtons', [
             ]);
         }else{
             $itens = View::render('pages/home/profileButton', [
+                'user' => $login['user']
             ]);
         }
 
