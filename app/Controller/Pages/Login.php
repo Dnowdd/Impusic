@@ -21,13 +21,13 @@ class Login extends Page{
         $obUser = EntityChannel::getChannelByEmail($email);
         if(!$obUser instanceof User){
             // EMAIL OU SENHA INVÁLIDOS
-            $request->getRouter()->redirect('/tcc');
+            $request->getRouter()->redirect('/tcc/?status=loginfailed');
         }
 
         //VERIFICA A SENHA DO USUÁRIO
         if(!password_verify($senha,$obUser->senha)){
             // EMAIL OU SENHA INVÁLIDOS
-            $request->getRouter()->redirect('/tcc');
+            $request->getRouter()->redirect('/tcc/?status=loginfailed');
         }
 
         //CRIA A SESSÃO DE LOGIN

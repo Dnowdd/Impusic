@@ -42,14 +42,29 @@ class Page{
     public static function getSignButtons(){
         $itens = '';
 
-        $login = SessionAdminLogin::getLogin();
-
         if(!SessionAdminLogin::isLogged()){
             $itens = View::render('pages/home/signButtons', [
             ]);
         }else{
+            $login = SessionAdminLogin::getLogin();
             $itens = View::render('pages/home/profileButton', [
                 'user' => $login['user']
+            ]);
+        }
+
+        return $itens;
+    }
+
+    /**
+     * Método responsável por retornar o toast com o status personalizado da página
+     * @return string
+     */
+    public static function getStatus($status){
+        $itens = '';
+
+        if($status != '' or $status != null){
+            $itens = View::render('pages/home/status', [
+                'message' => $status
             ]);
         }
 
@@ -61,6 +76,22 @@ class Page{
      * @return string
      */
     public static function getPage($css,$title,$description,$content){
+
+        $status = '';
+        if(isset($_GET['status'])){
+            switch($_GET['status']){
+                case 'loginfailed':
+                    $status = 'Email ou Senha incorreta(s)!';
+                    break;
+                case 'emailfailed':
+                    $status = 'Email inválido!';
+                    break;
+                case 'emailused':
+                    $status = 'Email já sendo utilizado!';
+                    break;
+            }
+        }
+
         return View::render('pages/page',[
             'css' => $css,
             'title' => $title,
@@ -69,6 +100,7 @@ class Page{
             'profileSettings' => self::getSignButtons(),
             'login' => self::getLogin(),
             'register' => self::getRegister(),
+            'status' => self::getStatus($status),
             'content' => $content,
             'footer' => self::getFooter()
         ]);

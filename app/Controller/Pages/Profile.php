@@ -17,6 +17,9 @@ class Profile extends Page{
         //Organização
         $obOrganization = new Organization;
 
+        if(!SessionAdminLogin::isLogged()){
+            return false;
+        }
         $login = SessionAdminLogin::getLogin();
         $obUser = EntityChannel::getChannelByUser($user);
 

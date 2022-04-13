@@ -29,10 +29,8 @@ class Channel extends Page{
 
         //VERIFICA EMAIL
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            echo $email;
-            echo "<br>";
-            var_dump("Email invalido");
-            return false;
+            $request->getRouter()->redirect('/tcc/?status=emailfailed');
+            exit;
         }
         
         //VALIDA O EMAIL E USER DO USUARIO
@@ -40,7 +38,8 @@ class Channel extends Page{
         $obChannelUser = EntityChannel::getChannelByUser($user);
         if($obChannelEmail instanceof EntityChannel || $obChannelUser instanceof EntityChannel){
             //REDIRECIONA O USUÁRIO SE JÁ EXISTIR UM EMAIL OU USER
-            return false;
+            $request->getRouter()->redirect('/tcc/?status=emailused');
+            exit;
         }
 
         //NOVA INSTANCIA DE USUÁRIO
@@ -54,7 +53,7 @@ class Channel extends Page{
         $obChannel->cadastrar();
 
         //REDIRECIONA O USUÁRIO
-        $request->getRouter()->redirect('/tcc');
+        $request->getRouter()->redirect('/');
     }
 
     /**
@@ -73,20 +72,20 @@ class Channel extends Page{
 
         if(!$obChannelEmail instanceof EntityChannel){
             // EMAIL OU SENHA INVÁLIDOS
-            $request->getRouter()->redirect('/tcc?status=loginfailed');
+            $request->getRouter()->redirect('/?status=loginfailed');
         }
 
         //VERIFICA A SENHA DO USUÁRIO
         if(!password_verify($senha,$obChannelEmail->password)){
             // EMAIL OU SENHA INVÁLIDOS
-            $request->getRouter()->redirect('/tcc?status=loginfailed');
+            $request->getRouter()->redirect('/?status=loginfailed');
         }
 
         //CRIA A SESSÃO DE LOGIN
         SessionAdminLogin::login($obChannelEmail);
 
         //REDIRECIONA O USUÁRIO PARA A HOME DO ADMIN
-        $request->getRouter()->redirect('/tcc');
+        $request->getRouter()->redirect('/');
     }
 
     /**
@@ -99,7 +98,7 @@ class Channel extends Page{
         SessionAdminLogin::logout();
 
         //REDIRECIONA O USUÁRIO PARA A TELA DE LOGIN
-        $request->getRouter()->redirect('/tcc');
+        $request->getRouter()->redirect('/');
     }
 
 }

@@ -24,7 +24,7 @@ class Login{
         self::init();
 
         //DEFINE A SESSÃO DO USUÁRIO
-        $_SESSION['admin']['user'] = [
+        $_SESSION['user'] = [
             'id' => $obUser->id,
             'name' => $obUser->name,
             'user' => $obUser->user,
@@ -38,7 +38,7 @@ class Login{
     public static function getLogin(){
         self::init();
 
-        return $_SESSION['admin']['user'];
+        return $_SESSION['user'];
     }
 
     /**
@@ -50,7 +50,7 @@ class Login{
         self::init();
 
         //RETORNA A VERIFICAÇÃO
-        return isset($_SESSION['admin']['user']['id']);
+        return isset($_SESSION['user']['id']);
     }
 
     /**
@@ -62,7 +62,7 @@ class Login{
         self::init();
 
         //DESLOGA O USUÁRIO
-        unset($_SESSION['admin']['user']);
+        unset($_SESSION['user']);
 
         //SUCESSO
         return true;

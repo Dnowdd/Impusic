@@ -268,3 +268,53 @@ footer > div > a:hover{
 
     background-color: rgba(0, 0, 0, 0.4);
 }
+
+
+
+.status{
+    opacity: 0;
+
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    font-size: 15px;
+    font-weight: 500;
+    padding: 4px 16px;
+
+    border-radius: 5px;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    z-index: 99999;
+
+    animation: statusShow 4s, statusInvisible 2s 4s 1;
+}
+
+@keyframes statusShow {
+    0%{
+        opacity: 80%;
+        transform: translateY(300%);
+    }
+    20%{
+        opacity: 80%;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 80%;
+        transform: translateY(0);
+    }
+}
+
+@keyframes statusInvisible {
+    0%{
+        opacity: 80%;
+    }
+    90%{
+        opacity: 0%;
+    }
+    100%{
+        display: none;
+    }
+}
