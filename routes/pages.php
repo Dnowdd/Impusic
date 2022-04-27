@@ -66,6 +66,13 @@ $obRouter->get('/profile/{user}',[
     }
 ]);
 
+//ROTA DE CADASTRO DE UM NOVO USUARIO
+$obRouter->get('/settings/profile',[
+    function($request){
+        return new Response(200,Pages\Profile::getSettings($request));
+    }
+]);
+
 
 //ROTA Teste Show
 /* $obRouter->get('/show',[

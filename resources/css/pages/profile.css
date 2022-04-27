@@ -130,7 +130,7 @@
     font-weight: 900;
     transition: .3s;
 }
-.profileInfo > .settings > .edit{
+.profileInfo > .settings > a > .edit{
     padding: 0 10px;
     height: 25px;
 
@@ -144,7 +144,7 @@
     font-weight: 900;
     transition: .3s;
 }
-.profileInfo > .settings > .edit:hover,
+.profileInfo > .settings > a > .edit:hover,
 .profileInfo > .settings > .moreEdit:hover{
     background-color: var(--profile-button-edit-hover);
 }

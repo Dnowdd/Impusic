@@ -8,7 +8,6 @@ use \App\Model\Entity\Organization;
 use \App\Session\Admin\Login as SessionAdminLogin;
 
 class Profile extends Page{
-
     /**
      * Método responsável por retornar o conteúdo (view) da nossa Home
      * @return string
@@ -57,6 +56,27 @@ class Profile extends Page{
             'profile',
             //TITLE DA PÁGINA
             $obUser->name.' - '.$obOrganization->name,
+            //DESCRIÇÃO DA PÁGINA
+            'Bem-vindos ao RiftMaker.com - Análise as estatísticas de invocadores, melhores campeões, ranking competitivo, times de Clash, Profissionais e muito mais',
+            //CONTEUDO DA PÁGINA
+            $content
+        );
+    }
+
+    public static function getSettings($request){
+        //Organização
+        $obOrganization = new Organization;
+        
+        //VIEW DA HOME
+        $content = View::render('pages/profile/settings',[
+        ]);
+
+        //RETORNA A VIEW DA PÁGINA
+        return parent::getPage(
+            //NOME DE ARQUIVOS CSS,JS...
+            'profile',
+            //TITLE DA PÁGINA
+            'Editar usuario - '.$obOrganization->name,
             //DESCRIÇÃO DA PÁGINA
             'Bem-vindos ao RiftMaker.com - Análise as estatísticas de invocadores, melhores campeões, ranking competitivo, times de Clash, Profissionais e muito mais',
             //CONTEUDO DA PÁGINA
