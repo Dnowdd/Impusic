@@ -74,7 +74,7 @@ class Profile extends Page{
         //RETORNA A VIEW DA PÁGINA
         return parent::getPage(
             //NOME DE ARQUIVOS CSS,JS...
-            'profile',
+            'settings',
             //TITLE DA PÁGINA
             'Editar usuario - '.$obOrganization->name,
             //DESCRIÇÃO DA PÁGINA

@@ -1,0 +1,37 @@
+:root{
+    --wh-logoInput: 150px;
+}
+.logoInput{
+    width: var(--wh-logoInput);
+    height: var(--wh-logoInput);
+    margin: 150px 0;
+
+    position: relative;
+}
+
+.logoInput > img{
+    width: var(--wh-logoInput);
+    height: var(--wh-logoInput);
+
+    border-radius: 100%;
+
+    position: absolute;
+}
+.logoInput > div{
+    --w-logoInput-div: 60px;
+
+    top: calc(50% - calc(var(--w-logoInput-div) / 2));
+    left: calc(50% - calc(var(--w-logoInput-div) / 2));
+
+    width: var(--w-logoInput-div);
+    height: var(--w-logoInput-div);
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    border-radius: 100%;
+
+    position: absolute;
+}
+.logoInput > div > i{
+    color: white;
+}
